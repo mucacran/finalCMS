@@ -1,0 +1,7 @@
+<!-- frontend/src/app/app.component.html -->
+<div>
+  <h1>Lista de Tareas</h1>
+  <input type="text" [(ngModel)]="nombreTarea">
+  <button (click)="agregarTarea(nombreTarea)">Agregar</button>
+  <app-tarea *ngFor="let tarea of tareas" [tarea]="tarea"></app-tarea>
+</div>

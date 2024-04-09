@@ -1,0 +1,7 @@
+<!-- frontend/src/app/tarea/tarea.component.html -->
+<div>
+    <input type="checkbox" [(ngModel)]="tarea.completada">
+    <span>{{ tarea.nombre }}</span>
+    <button (click)="eliminarTarea(tarea._id)">Eliminar</button>
+  </div>
+  

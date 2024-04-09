@@ -5,3 +5,17 @@ mongosh --version or mongo --version
 mongosh "mongodb+srv://cluster0.5x8caww.mongodb.net/" --apiVersion 1 --username elmucacranrasta --password lSfAWKy1M0g6WwK1
 mongodb+srv://elmucacranrasta:lSfAWKy1M0g6WwK1@cluster0.5x8caww.mongodb.net/
 mongodb+srv://elmucacranrasta:<password>@cluster0.5x8caww.mongodb.net/
+
+//crear un proyecto
+ng new my-first-app --no-strict --standalone false --routing false
+ng new my-second-ap --no-strict --standalone false --routing false
+ng new name-of-your --no-strict --standalone false --routing false
+ng new ListaDeTareas --routing=false --style=css
+ng new ListaDeTareas --no-strict --standalone false --routing false
+
+//creando componentes
+ng generate component task-list
+ng g c tarea
+
+//aranque mongo
+sudo mongod --dbpath "/Users/fbravo/mongodb/data"

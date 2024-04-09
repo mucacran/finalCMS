@@ -1,0 +1,13 @@
+vamos a crear una aplicación que se trate de "Lista de Tareas" en Angular muy sencilla para cumplir una tarea con los siguientes parametros:
+Single Page Application (SPA) 
+Uses the MEAN (MongoDB, Express, Angular, and NodeJS) stack
+Includes the following components:
+Angular component(s)
+Angular service(s)
+Node web service(s)
+MongoDB database
+Supports the CRUD (Create, Read, Update, and Delete) methods of the application data
+
+La base de datos sera en mongodb de la nube no sera en loca
+
+Para esto tendras que darme el codigo fuente de cada archivo y la ruta especifica de donde se ejecutaran los comandos para cargar las librerias, tambien tendras que decirme la estructura de los directorios para poder entender mejor desde donde se llama los archivos del modulo
