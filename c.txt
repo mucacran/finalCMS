@@ -1,0 +1,7 @@
+userName: elmucacranrasta
+contra: lSfAWKy1M0g6WwK1
+
+mongosh --version or mongo --version
+mongosh "mongodb+srv://cluster0.5x8caww.mongodb.net/" --apiVersion 1 --username elmucacranrasta --password lSfAWKy1M0g6WwK1
+mongodb+srv://elmucacranrasta:lSfAWKy1M0g6WwK1@cluster0.5x8caww.mongodb.net/
+mongodb+srv://elmucacranrasta:<password>@cluster0.5x8caww.mongodb.net/

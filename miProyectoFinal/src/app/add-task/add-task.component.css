@@ -1,0 +1,51 @@
+/* Estilos personalizados para el componente AddTaskComponent */
+
+.add-task-container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .add-task-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .add-task-container form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .add-task-container form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .add-task-container form label {
+    font-weight: bold;
+  }
+  
+  .add-task-container form input[type="text"],
+  .add-task-container form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-task-container form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-task-container form button:hover {
+    background-color: #0056b3;
+  }
+  
