@@ -32,25 +32,23 @@ app.use((req, res, next) => {
   );
   next();
 });
-// xxHMoTqkdyeTe2yf
+
 app.post("/api/posts", (req, res, next) => {
   const tarea = new Tarea({
-    title: req.body.nombre,
-    content: req.body.completada,
+    nombre: req.body.nombre,
+    completada: req.body.completada,
   });
-
   post.save().then((createdTarea) => {
     //console.log(createdTarea);
     res.status(201).json({
       message: "Tarea añadida satisfactoriamente",
-      postId: createdTarea._id,
+      postId: createdTarea._id
     });
   });
 });
 
 app.get("/api/posts", (req, res, next) => {
-  Tarea.find()
-    .then((tarea) => {
+  Tarea.find().then((tarea) => {
       console.log(tarea); // Aquí obtienes los documentos recuperados de la base de datos
       res.status(200).json({
         message: "tarea fetched successfully!",
@@ -65,9 +63,7 @@ app.get("/api/posts", (req, res, next) => {
 app.delete("/api/posts/:id", (req, res, next) => {
   Tarea.deleteOne({ _id: req.params.id }).then((result) => {
     console.log(result);
-    res.status(200).json({
-      message: "Post eliminado o borrado",
-    });
+    res.status(200).json({message: "Post eliminado o borrado"});
   });
 });
 

@@ -19,24 +19,21 @@ export class TareaService {
   constructor(private http: HttpClient) {}
 
 
-  obtenerTareas(): void {
-    this.http.get<{ tarea: any[] }>(this.apiUrl)
+  obtenerTareas(): Observable<Tarea[]> {
+    return this.http.get<{ tarea: Tarea[] }>(this.apiUrl)
       .pipe(
         map((postData) => {
           return postData.tarea.map(tarea => {
             return {
               nombre: tarea.nombre,
               completada: tarea.completada,
-              id: tarea._id
+              id: tarea.id
             };
           });
         })
-      )
-      .subscribe(_trans_posts => {
-        this.tarea = _trans_posts;
-        this.postsUpdated.next([...this.tarea]);
-      });
+      );
   }
+
   /*
   obtenerTareas(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(this.apiUrl).pipe(

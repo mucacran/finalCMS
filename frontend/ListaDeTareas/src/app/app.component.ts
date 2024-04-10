@@ -8,7 +8,10 @@ import { TareaService } from './tarea/tarea.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
+
+
   tareas: Tarea[];
   nombreTarea: string = '';
 
@@ -34,4 +37,5 @@ export class AppComponent implements OnInit {
       this.tareas.push(tarea);
     });
   }
+
 }
