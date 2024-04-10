@@ -1,7 +1,9 @@
 // frontend/src/app/tarea/tarea.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Subject } from "rxjs";
 import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 import { Tarea } from './tarea.model';
 
 @Injectable({
@@ -10,10 +12,32 @@ import { Tarea } from './tarea.model';
 export class TareaService {
   //private apiUrl = '/api/tareas';
   private apiUrl = 'http://localhost:3000/api/tareas';
-  tarea: Tarea[] = [];
+  
+  private tarea: Tarea[] = [];
+  private postsUpdated = new Subject<Tarea[]>();
 
   constructor(private http: HttpClient) {}
 
+
+  obtenerTareas(): void {
+    this.http.get<{ tarea: any[] }>(this.apiUrl)
+      .pipe(
+        map((postData) => {
+          return postData.tarea.map(tarea => {
+            return {
+              nombre: tarea.nombre,
+              completada: tarea.completada,
+              id: tarea._id
+            };
+          });
+        })
+      )
+      .subscribe(_trans_posts => {
+        this.tarea = _trans_posts;
+        this.postsUpdated.next([...this.tarea]);
+      });
+  }
+  /*
   obtenerTareas(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(this.apiUrl).pipe(
       map((tareas) => {
@@ -22,7 +46,7 @@ export class TareaService {
         return tareas;
       })
     );
-  }
+  }*/
   /*
   obtenerTareas(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(this.apiUrl);

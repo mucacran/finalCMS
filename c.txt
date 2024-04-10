@@ -19,3 +19,9 @@ ng g c tarea
 
 //aranque mongo
 sudo mongod --dbpath "/Users/fbravo/mongodb/data"
+
+
+
+finalTareaSemana12
+elmucacranrasta
+vH2U5G8HO1OS1oai
