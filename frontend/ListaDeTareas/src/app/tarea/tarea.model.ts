@@ -1,7 +1,7 @@
 // frontend/src/app/tarea/tarea.model.ts
 
 export interface Tarea {
-  id?: string;
+  _id?: string;
   nombre: string;
   completada: boolean;
 }
