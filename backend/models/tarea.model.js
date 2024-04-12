@@ -8,9 +8,9 @@ const TareaSchema = mongoose.Schema({
 });
 
 // Define el nombre de la base de datos
-const dbName = 'listaDeTareas';
+const dbName = 'tareas';
 
 // Define el nombre de la colección
-const collectionName = 'tarea';
+const collectionName = 'tareas';
 
 module.exports = mongoose.model('Tarea', TareaSchema, collectionName, "");

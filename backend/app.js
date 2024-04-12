@@ -9,7 +9,7 @@ const Tarea = require("./models/tarea.model");
 
 const app = express();
 mongoose
-  .connect("mongodb+srv://elmucacranrasta:vH2U5G8HO1OS1oai@cluster0.ef68u9l.mongodb.net/")
+  .connect("mongodb+srv://elmucacranrasta:vH2U5G8HO1OS1oai@cluster0.ef68u9l.mongodb.net/tareas")
   .then(() => {
     console.log("se ha conectado a la base de datos");
   })
@@ -33,7 +33,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/api/posts", (req, res, next) => {
+app.post("/api/tareas", (req, res, next) => {
   const tarea = new Tarea({
     nombre: req.body.nombre,
     completada: req.body.completada,
@@ -47,7 +47,11 @@ app.post("/api/posts", (req, res, next) => {
   });
 });
 
-app.get("/api/posts", (req, res, next) => {
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
+
+app.get("/api/tareas", (req, res, next) => {
   Tarea.find().then((tarea) => {
       console.log(tarea); // Aquí obtienes los documentos recuperados de la base de datos
       res.status(200).json({
@@ -60,7 +64,7 @@ app.get("/api/posts", (req, res, next) => {
     });
 });
 
-app.delete("/api/posts/:id", (req, res, next) => {
+app.delete("/api/tareas/:id", (req, res, next) => {
   Tarea.deleteOne({ _id: req.params.id }).then((result) => {
     console.log(result);
     res.status(200).json({message: "Post eliminado o borrado"});

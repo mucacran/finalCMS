@@ -12,7 +12,7 @@ import { TareaService } from './tarea/tarea.service';
 export class AppComponent implements OnInit {
 
 
-  tareas: Tarea[];
+  tareas: Tarea[] = [];
   nombreTarea: string = '';
 
   constructor(private tareaService: TareaService) {}
@@ -22,8 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   obtenerTareas() {
-    this.tareaService.obtenerTareas().subscribe(tareas => {
-      this.tareas = tareas;
+    this.tareaService.obtenerTareas()
+    .subscribe(
+      tareas => {
+      this.tareas = tareas,
+      error => console.error('Error al obtener las tareas', error)
     });
   }
 

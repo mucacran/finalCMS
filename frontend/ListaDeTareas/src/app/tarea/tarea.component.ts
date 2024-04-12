@@ -9,9 +9,24 @@ import { TareaService } from './tarea.service';
   styleUrls: ['./tarea.component.css']
 })
 export class TareaComponent {
+  tareas: Tarea[] = [];
   @Input() tarea: Tarea;
 
   constructor(private tareaService: TareaService) {}
+
+  ///
+  ngOnInit(): void {
+    this.obtenerTareas();
+  }
+
+  obtenerTareas(): void {
+    this.tareaService.obtenerTareas()
+      .subscribe(
+        tareas => this.tareas = tareas,
+        error => console.error('Error al obtener las tareas', error)
+      );
+  }
+  ////
 
   eliminarTarea(id: string) {
     this.tareaService.eliminarTarea(id).subscribe(() => {

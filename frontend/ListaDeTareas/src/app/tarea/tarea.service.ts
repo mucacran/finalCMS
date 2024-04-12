@@ -13,42 +13,45 @@ export class TareaService {
   //private apiUrl = '/api/tareas';
   private apiUrl = 'http://localhost:3000/api/tareas';
   
-  private tarea: Tarea[] = [];
+  tarea: Tarea[] = [];
   private postsUpdated = new Subject<Tarea[]>();
 
   constructor(private http: HttpClient) {}
 
-
+/*
   obtenerTareas(): Observable<Tarea[]> {
     return this.http.get<{ tarea: Tarea[] }>(this.apiUrl)
       .pipe(
-        map((postData) => {
-          return postData.tarea.map(tarea => {
+        map((tareas) => {
+          return tareas
+          .tarea.map(tareas => {
             return {
-              nombre: tarea.nombre,
-              completada: tarea.completada,
-              id: tarea.id
+              nombre: tareas.nombre,
+              completada: tareas.completada,
+              id: tareas.id
             };
           });
         })
       );
-  }
+  }*/
 
   /*
   obtenerTareas(): Observable<Tarea[]> {
-    return this.http.get<Tarea[]>(this.apiUrl).pipe(
+    return this.http.get<Tarea[]>(this.apiUrl)
+    .pipe(
       map((tareas) => {
         this.tarea = tareas;
         console.log("hola pancho");
         return tareas;
       })
     );
-  }*/
-  /*
+  }
+*/
+  
   obtenerTareas(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(this.apiUrl);
   }
-  */
+  
 
   agregarTarea(tarea: Tarea): Observable<Tarea> {
     return this.http.post<Tarea>(this.apiUrl, tarea);

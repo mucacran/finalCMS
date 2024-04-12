@@ -25,3 +25,6 @@ sudo mongod --dbpath "/Users/fbravo/mongodb/data"
 finalTareaSemana12
 elmucacranrasta
 vH2U5G8HO1OS1oai
+
+//tutorial
+https://medium.com/@diego.coder/conexi%C3%B3n-a-una-base-de-datos-mongodb-con-node-js-y-mongoose-83ebcecd4c77api/posts
