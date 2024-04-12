@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
 
   tareas: Tarea[] = [];
-  nombreTarea: string = '';
+  nombreTarea: string = 'Este es el nombre de la tareas';
 
   constructor(private tareaService: TareaService) {}
 

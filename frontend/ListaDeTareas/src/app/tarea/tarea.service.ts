@@ -49,7 +49,11 @@ export class TareaService {
 */
   
   obtenerTareas(): Observable<Tarea[]> {
-    return this.http.get<Tarea[]>(this.apiUrl);
+    const pp = this.http.get<Tarea[]>(this.apiUrl);
+    console.log('hola sergio');
+    console.log(pp);
+
+    return pp;
   }
   
 

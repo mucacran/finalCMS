@@ -7,7 +7,8 @@ export interface Tarea {
 }
 
 
-/*export class Tarea {
+/*
+export class Tarea {
   constructor(
     public id?: string,
     public nombre?: string,

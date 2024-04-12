@@ -10,7 +10,11 @@ import { TareaService } from './tarea.service';
 })
 export class TareaComponent {
   tareas: Tarea[] = [];
-  @Input() tarea: Tarea;
+  
+  @Input() tareass: Tarea;
+  //@Input() tareass: string;
+  
+  pepe: string = "hola sergio";
 
   constructor(private tareaService: TareaService) {}
 

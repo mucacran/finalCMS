@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 
 const TareaSchema = mongoose.Schema({
   //id: { type: String, required: true },
-  nombre: { type: String, required: true },
-  completada: { type: Boolean, required: true }
+  nombre: String,
+  completada: Boolean
 });
 
 // Define el nombre de la base de datos
